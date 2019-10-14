@@ -63,17 +63,16 @@ Aws.eager_autoload!
 # #### Usage:
 # This is an example of logstash config:
 # [source,ruby]
-# output {
-#    s3{
-#      access_key_id => "crazy_key"             (required)
-#      secret_access_key => "monkey_access_key" (required)
-#      region => "eu-west-1"                    (optional, default = "us-east-1")
-#      bucket => "your_bucket"                  (required)
-#      size_file => 2048                        (optional) - Bytes
-#      time_file => 5                           (optional) - Minutes
-#      codec => "plain"                         (optional)
-#      canned_acl => "private"                  (optional. Options are "private", "public-read", "public-read-write", "authenticated-read", "aws-exec-read", "bucket-owner-read", "bucket-owner-full-control", "log-delivery-write". Defaults to "private" )
-#    }
+output {
+   s3{
+     access_key_id => "tracking"             
+     secret_access_key => "s6djgfwhQXJ8D7vu" 
+     region => "vietnam"                    
+     bucket => "tracking"                  
+     size_file => 2048                        
+     time_file => 5                           
+     codec => "json"                        
+   }
 #
 class LogStash::Outputs::S3 < LogStash::Outputs::Base
   require "logstash/outputs/s3/writable_directory_validator"
